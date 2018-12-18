@@ -3,6 +3,7 @@ from transitions.extensions import GraphMachine
 from utils import send_text_message
 from utils import send_button_message
 from utils import send_url_message
+from utils import send_image_message
 from bs4 import BeautifulSoup
 
 import requests
@@ -294,6 +295,7 @@ class TocMachine(GraphMachine):
                 k=k+1  
         if r=="just for today\n":
             r="The movie you choose is not broadcast on this theather" 
+        send_image_message(sender_id,"http://iphoto.ipeen.com.tw/photo/map_cache/new/1/7/6/140671/300x300.png")
         send_text_message(sender_id,r)
         self.go_back()
    
@@ -337,6 +339,7 @@ class TocMachine(GraphMachine):
                 k=k+1
         if r=="just for today\n":
             r="The movie you choose is not broadcast on this theather"        
+        send_image_message(sender_id,"http://iphoto.ipeen.com.tw/photo/map_cache/new/5/7/7/1201775/600x360.png")
         send_text_message(sender_id,r)
         self.go_back()
    
@@ -390,6 +393,7 @@ class TocMachine(GraphMachine):
 
         if r=="just for today\n":
             r="The movie you choose is not broadcast on this theather"        
+        send_image_message(sender_id,"http://www.ambassador.com.tw/external/events/shinefilm2018/images/cinema_a2.jpg")
         send_text_message(sender_id,r)
         self.go_back()
    
