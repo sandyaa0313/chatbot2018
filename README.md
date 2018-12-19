@@ -41,7 +41,7 @@
   We can get a link for movie introduction.</br>
   
 * hug state:</br>
-  It will reply 'thank you!!!' and back to user.</br>
+  It will reply 'thank you!!!' and back to user .</br>
 
 * choice state:</br>
   Now we just pick uo  one movie,so we are going to choose one movie theather in Tainan.</br>
