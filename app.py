@@ -16,7 +16,8 @@ machine = TocMachine(
         'intro',#introduction of the bot
         'contact',#reflect the problem
         'theather2',
-        'theather3'
+        'theather3',
+        'hug'
     ],
     transitions=[
         {
@@ -30,6 +31,12 @@ machine = TocMachine(
             'source': 'user',
             'dest': 'contact',
             'conditions': 'is_going_to_contact'
+        },
+        {
+             'trigger': 'advance',
+            'source': 'user',
+            'dest': 'hug',
+            'conditions': 'is_going_to_hug'
         },
         {
              'trigger': 'advance',
@@ -91,6 +98,8 @@ machine = TocMachine(
                 'state1',
                 'intro',
                 'contact',
+                'hug',
+                'state4',
                 'theather',
                 'theather2',
                 'theather3'

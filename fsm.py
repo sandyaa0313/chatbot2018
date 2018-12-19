@@ -35,7 +35,14 @@ class TocMachine(GraphMachine):
             if 'text' in event['message']:
                 text = event['message']['text']
                 return True
-        return False        
+        return False    
+
+    def is_going_to_hug(self, event):
+        if event.get("message"):
+            if 'text' in event['message']:
+                text = event['message']['text']
+                return text.lower() == 'give me a hug'
+        return False    
 
     def is_going_to_state2(self, event):
         if event.get("postback"):
@@ -131,11 +138,21 @@ class TocMachine(GraphMachine):
         print("I'm entering state intro")
 
         sender_id = event['sender']['id']
-        send_text_message(sender_id,"This is a chatbot for simply searching movie broadcast time.\nType 'know more' to get more information,or type 'contact' to reflect problems.")
+        send_text_message(sender_id,"This is a chatbot for simply searching movie broadcast time.\nType 'know more' to get more information.\nType 'contact' to reflect problems.\nType 'give me a hug' to give me some encouragement.")
         self.go_back()
 
     def on_exit_intro(self):
-        print('Leaving state intro')            
+        print('Leaving state intro')
+
+    def on_enter_hug(self,event):
+        print("I'm entering state intro")
+
+        sender_id = event['sender']['id']
+        send_text_message(sender_id,"thank you!!!")
+        self.go_back()
+
+    def on_exit_hug(self):
+        print('Leaving state hug')                
 
     def on_enter_state2(self, event):
         print("I'm entering state2")
@@ -224,9 +241,9 @@ class TocMachine(GraphMachine):
         ]
 
         send_url_message(sender_id,"Here is the link.",buttons)
-        #self.go_back()
+        self.go_back()
 
-    def on_exit_state4(self,event):
+    def on_exit_state4(self):
         print('Leaving state4')
 
     def on_enter_choice(seif,event):
