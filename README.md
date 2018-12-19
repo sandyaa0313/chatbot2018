@@ -54,7 +54,7 @@
   It will print the movie broadcast time(just for today) and the picture for the location of the theather.</br>
   Now you can back to user state if you type anything you like again.</br>
   
-*　theather2 state:</br>
+* theather2 state:</br>
   It will print the movie broadcast time(just for today) and the picture for the location of the theather2.</br>
   Now you can back to user state if you type anything you like again.</br>
   
